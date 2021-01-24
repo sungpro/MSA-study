@@ -4,8 +4,10 @@ import (
 	"context"
 	"log"
 	"net"
+
 	"google.golang.org/grpc"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
+	// pb "google.golang.org/grpc/examples/helloworld/helloworld"
+	pb "github.com/sungpro/msa-study/week1/helloworld/helloworld"
 )
 
 const (
@@ -20,6 +22,7 @@ type server struct {
 // SayHello implements helloworld.GreeterServer
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	id := in.GetId()
+
 	log.Printf("Received ID: %v", id)
 
 	// //////////////////////////////////////////////////

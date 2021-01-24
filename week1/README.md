@@ -136,6 +136,12 @@ func main() {
 
 ```
 
+## Generate Python client code
+
+```python
+python -m grpc_tools.protoc -I helloworld/ --python_out=. --grpc_python_out=. helloworld/helloworld.proto
+```
+
 ## Write Client Code
 
 Create a file named `main.py` in the project directory, which contains the following code.
