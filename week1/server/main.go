@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/grpc"
 	// pb "google.golang.org/grpc/examples/helloworld/helloworld"
-	pb "github.com/sungpro/msa-study/week1/helloworld/helloworld"
+	pb "github.com/sungpro/MSA-study/week1/helloworld/helloworld"
 )
 
 const (
