@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/grpc"
 	// pb "google.golang.org/grpc/examples/helloworld/helloworld"
-	pb "github.com/sungpro/MSA-study/week1/helloworld/helloworld"
+	pb "github.com/sungpro/MSA-study/week1/helloworld"
 )
 
 const (
@@ -37,11 +37,16 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 	case "789":
 		name = "Sebina"
 	default:
-		log.Printf("I don't know you")
+		name = "" // name is emtpy if not found on DB
 	}
 	// //////////////////////////////////////////////////
 
-	return &pb.HelloReply{Message: "Hello, " + name}, nil
+	if name != "" {
+		return &pb.HelloReply{Message: "Hello, " + name + ", welcome!"}, nil
+	} else {
+		return &pb.HelloReply{Message: ""}, nil
+	}
+
 }
 
 func main() {
