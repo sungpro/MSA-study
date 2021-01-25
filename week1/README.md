@@ -28,6 +28,20 @@ This is a simple and trivial tutorial on using gRPC in Go to enable communicatio
 		```
 
 
+## Starter files
+
+To download the starter files and follow along this tutorial, run the following code in terminal:
+
+```sh
+git clone https://github.com/sungpro/MSA-study.git --branch starter
+```
+
+Or to download the complete app to test it right away:
+
+```sh
+git clone https://github.com/sungpro/MSA-study.git --branch complete
+```
+
 ## Define Protobufs
 
 Create a file named `helloworld.proto` in the project directory, which contains the following code.
