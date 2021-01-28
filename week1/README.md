@@ -27,6 +27,10 @@ This is a simple and trivial tutorial on using gRPC in Go to enable communicatio
 		$ export PATH="$PATH:$(go env GOPATH)/bin"
 		```
 
+## `go mod init` (make the current directory the root of a module)
+```sh
+$ go mod init github.com/sungpro/MSA-study/week1
+```
 
 ## Define Protobufs
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-// option go_package = "github.com/sungpro/MSA-study/week2/next-grpc/protos/chat";
+option go_package = "github.com/sungpro/MSA-study/week2/next-grpc/protos/chat";
 
 package chat;
 

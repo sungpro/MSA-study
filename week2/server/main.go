@@ -6,7 +6,7 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
-	pb "github.com/sungpro/MSA-study/week2/next-grpc/protos/chat"
+	pb "github.com/sungpro/MSA-study/week2/protos/chat"
 )
 
 const (
