@@ -7,10 +7,18 @@ This is a simple and trivial tutorial on using gRPC in Go to enable communicatio
 - **Python** (3.5 or higher)
 - **pip** (9.0.1 or higher)
 - **protoc**, Protocol buffer compiler
-- **grpcio**, Python gRPC package
-	```sh
-	$ python -m pip install grpcio
-	```
+- **protoc-gen-grpc-web**, code generator plugin:
+
+	1.  Download one that matches your OS from `grpc-web` [release page](https://github.com/grpc/grpc-web/releases):
+	
+	2.  Make it executable and discoverable from your PATH.
+
+		```sh
+		$ sudo mv <PLUGIN_FILE> \
+    /usr/local/bin/protoc-gen-grpc-web
+		$ chmod +x /usr/local/bin/protoc-gen-grpc-web
+		```
+
 - **Go plugins** for the protocol compiler:
 
 	1.  Install the protocol compiler plugins for Go using the following commands:
@@ -26,6 +34,15 @@ This is a simple and trivial tutorial on using gRPC in Go to enable communicatio
 		```sh
 		$ export PATH="$PATH:$(go env GOPATH)/bin"
 		```
+
+
+## add packages
+```sh
+$ yarn add google-protobuf
+```
+
+## generate server code
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative ./chat.proto
 
 
 ## Define Protobufs
@@ -57,6 +74,16 @@ message HelloReply {
   string message = 1;
 }
 ```
+
+
+
+
+## Generate gRPC code to use in web
+
+```sh
+$ protoc -I=. public/protos/chat.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
+```
+
 
 ## Generate gRPC code to use in Go server
 
